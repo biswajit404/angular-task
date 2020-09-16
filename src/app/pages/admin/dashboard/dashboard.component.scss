@@ -1,0 +1,18 @@
+
+.btn-group{
+    margin-bottom: 20px;
+    float: right;
+    .pdf-btn{
+        margin-left: 15px;
+    }
+}
+.badge{
+    background: #ccc;
+    margin: 5px;
+    cursor: pointer;
+    color: black;
+    &.active{
+        background: green;
+        color: white;
+    }
+}

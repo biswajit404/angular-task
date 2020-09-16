@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-sm-12">
+        <app-card cardTitle="User List" blockClass="table-border-style" [options]="false">
+            <div class="btn-group">
+            <button class="btn btn-success excel-btn" type="button" (click)="downloadExcel()"><i
+                    class="fa fa-file-excel-o" aria-hidden="true"></i> Export To Excel</button>
+            <button class="btn btn-danger pdf-btn" (click)="printPDF()" type="button"><i class="fa fa-file-pdf-o"
+                    aria-hidden="true"></i> Export To PDF</button>
+                </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Id</th>
+                            <th>User Name</th>
+                            <th>Password</th>
+                            <th>Permission</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of userList; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{user.id}}</td>
+                            <td>{{user.username}}</td>
+                            <td>{{user.password}}</td>
+                            <td>
+                                <ng-container *ngFor="let per of permissionList">
+                                    <a class="badge" (click)="reSetPermission(per,i)" [ngClass]="getActiveClass(user.permission,per)">{{per}}</a>
+                                </ng-container>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </app-card>
+    </div>
+</div>

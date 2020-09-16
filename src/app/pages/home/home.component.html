@@ -1,0 +1,17 @@
+<loading [state]="loading">
+<main id="content" class="content" role="main">
+	<div class="wraps">
+		<app-card cardTitle="Posts" [options]="false" blockClass="gallery-masonry">
+			<div class="card-columns">
+				<app-card [hidHeader]="true" *ngFor="let item of postList| slice:0:10; let i=index">
+					<h5 class="card-title">{{item.title}}</h5>
+					<p class="card-text">{{item.body}}</p>
+					<a href="javascript:" class="card-link" [routerLink]="['/blog/edit/'+item.id]"><i class="fas fa-edit"></i></a>
+					<a href="javascript:" class="card-link" (click)="delete(item.id,i)"><i class="fas fa-trash-alt"></i></a>
+				</app-card>				
+			</div>
+			<a class="btn_more" [routerLink]="['/blog']">See More &rarr;</a>
+		</app-card>
+	</div>
+</main>
+</loading>

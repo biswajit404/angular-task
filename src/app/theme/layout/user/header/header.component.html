@@ -1,0 +1,24 @@
+<nav class="main-nav overlay clearfix">
+    <a class="blog-logo" [routerLink]="['/home']"><img src="assets/images/logo-dark.png" alt="Fashion Critiques" /></a>
+    <ul id="menu">
+        <li class="nav-home" [routerLinkActive]="['nav-current']" role="presentation"><a [routerLink]="['/home']">Home</a></li>
+        <li class="nav-article-example" [routerLinkActive]="['nav-current']" role="presentation"><a [routerLink]="['/blog']">Blog</a></li>
+        
+        <span class="socialheader">
+            <a href="javascript:" class="dud-logout" title="Logout" (click)="logout()">
+                <i class="fas fa-power-off"></i>
+              </a>
+        </span>
+    </ul>
+</nav>
+<header class="main-header " style="background-image: url(assets/img/intro.jpg)">
+	<div class="vertical">
+		<div class="main-header-content inner">
+			<h1 class="page-title">What is Lorem Ipsum?</h1>
+			<div class="entry-title-divider">
+				<span></span><span></span><span></span>
+			</div>
+			<h2 class="page-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</h2>
+		</div>
+	</div>
+</header>
