@@ -60,7 +60,7 @@ export class EditComponent implements OnInit {
       this.blogService.updatePost(this.postId,this.form.value).subscribe(
         res => {
           this.loading = LoadingState.Ready
-          this.toastr.success('New Post has been added', '', {
+          this.toastr.success('Post has been updated', '', {
             timeOut: 3000,
           });
           this.router.navigateByUrl('/blog');
